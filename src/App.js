@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+const [mensagem, setMensagem]= useState('');
+
+function gerarLink(){
+  
+  
+}
+  return(
+    <div className="app">
+      <head className='menu'>
+          <div>
+            <a href='https://www.youtube.com/channel/UC1bwSRgCMQUalLADdWPO5TQ'>youtube</a>
+            <a href='https://www.instagram.com/sabrinams.9/'>instagram</a>
+          </div>
+      </head>
+        <h1>SujeitoLink</h1>
+        <span>Cole seu link para encurtar</span>
+
+      <div className='area-input'>
+        <input
+        type="text"
+        placeholder="Cole seu link aqui..."
+        value={mensagem}
+        onChange={(e) => setMensagem(e.target.value)}
+        />
+
+        <button onclick={gerarLink}>
+          Gerar Link
+        </button>
+      </div>
     </div>
+    
   );
 }
-
-export default App;
